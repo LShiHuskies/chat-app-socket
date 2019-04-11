@@ -31,7 +31,7 @@ module.exports = {
     createdBy : {
       model: 'user',
       required: true
-    }
+    },
 
   },
 

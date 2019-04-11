@@ -25,7 +25,10 @@ module.exports.routes = {
     action: 'render'
    },
   '/chat': { view: 'chatroom' },
-
+  '/postMessage': {
+    controller: 'ChatMessageController',
+    action: 'postMessage'
+    },
 
   /***************************************************************************
   *                                                                          *

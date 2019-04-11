@@ -16,7 +16,7 @@
     <hr>
 
     <!-- Chat Post -->
-    [ TODO chat-post ]
+    <% include partials/chat-post %>
 
   </div>
 </div>
@@ -26,5 +26,6 @@
     window.onload = function() {
       loadUsers();
       loadMessages();
+      activateChat();
     }
 </script>

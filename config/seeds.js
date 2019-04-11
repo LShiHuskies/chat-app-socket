@@ -30,5 +30,18 @@ module.exports.seeds = {
           location: 'London',
           bio: 'Loves reading motivation books'
         }
-      ]
+      ],
+
+    chatMessage: [
+      {
+          message: 'Hello',
+          user:  {
+            name: 'John Wayne',
+            email: 'johnnie86@gmail.com',
+            avatar: 'https://randomuser.me/api/portraits/men/83.jpg',
+            location: 'Mombasa',
+            bio: 'Spends most of my time at the beach'
+          },
+      },
+    ]
 }
