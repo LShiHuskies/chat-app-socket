@@ -32,10 +32,12 @@ function loadUsers() {
 
 function renderChatUsers(data) {
   const element = document.getElementById('users-content');
-  console.log(element);
   data.forEach(user => {
     const tag = document.createElement('p');
     tag.innerHTML = user.name;
+    const img = document.createElement('img');
+    img.src = user.avatar;
+    tag.appendChild(img);
     element.appendChild(tag);
   })
 
