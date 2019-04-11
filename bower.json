@@ -1,0 +1,21 @@
+{
+  "name": "chat-app-socket",
+  "description": "a Sails Application",
+  "main": "app.js",
+  "authors": [
+    "louisshi"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "semantic": "semantic-ui#^2.4.1",
+    "jsrender": "^1.0.2"
+  }
+}
