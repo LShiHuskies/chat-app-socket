@@ -38,11 +38,42 @@
     }
     
     function renderChatMessages(data) {
+
+    if (data.length) {
       data.forEach(user => {
          const event = document.createElement('div');
          event.className = 'event';
          const label = document.createElement('div');
          label.className = 'label';
+         const img = document.createElement('img');
+         img.src = user.createdBy.avatar;
+         label.appendChild(img);
+         event.appendChild(label);
+
+        const content = document.createElement('div');
+        content.className = 'content';
+        const summary = document.createElement('div');
+        summary.className = 'summary';
+        const a = document.createElement('a');
+        a.href = '#';
+        a.innerHTML = user.createdBy.name;
+        // posted on
+        const date = document.createElement('div');
+        date.className = 'date';
+        date.innerHTML = user.createdAt
+        summary.appendChild(a);
+        summary.innerHTML += ' posted on';
+        summary.appendChild(date);
+        content.appendChild(summary);
+        const text = document.createElement('div');
+        text.className = 'extra text';
+        text.innerHTML = user.message;
+        content.appendChild(text);
+        const chatTemplate  = document.getElementById('chat-content');
+
+        chatTemplate.appendChild(event);
+        chatTemplate.appendChild(content);
+        
       });
     //   const chatContent = $('#chat-content');
     //   const template = $.templates('#chatTemplate');
@@ -51,7 +82,38 @@
     //   // automatically scroll downwards
     //   const scrollHeight = chatContent.prop("scrollHeight");
     //   chatContent.animate({ scrollTop: scrollHeight }, "slow");
-        
+     } else {
+        const event = document.createElement('div');
+         event.className = 'event';
+         const label = document.createElement('div');
+         label.className = 'label';
+         const img = document.createElement('img');
+         img.src = data.createdBy.avatar;
+         label.appendChild(img);
+         event.appendChild(label);
+
+        const content = document.createElement('div');
+        content.className = 'content';
+        const summary = document.createElement('div');
+        summary.className = 'summary';
+        const a = document.createElement('a');
+        a.href = '#';
+        a.innerHTML = `${data.createdBy.name}`;
+        // posted on
+        const date = document.createElement('div');
+        date.className = 'date';
+        date.innerHTML = data.createdAt
+        summary.appendChild(a);
+        summary.innerHTML += 'posted on';
+        summary.appendChild(date);
+        const text = document.createElement('div');
+        text.className = 'extra text';
+        text.innerHTML = data.message;
+        content.appendChild(text);
+        const chatTemplate  = document.getElementById('chat-content');
+        chatTemplate.appendChild(event);
+        chatTemplate.appendChild(content);
+     } 
     }
     
     </script>
